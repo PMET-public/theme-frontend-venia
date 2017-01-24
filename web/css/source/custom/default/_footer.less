@@ -1,0 +1,14 @@
+& when (@media-common = true) {
+    .footer.content {
+        text-align: center;
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xs) {
+    .footer.content {
+        .lib-vendor-prefix-display();
+    }
+    body {
+        background-color: blue;
+    }
+}

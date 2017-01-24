@@ -7,6 +7,9 @@
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
+        <!--
+            Header
+        -->
         <referenceBlock name="logo">
             <arguments>
                 <argument name="logo_img_width" xsi:type="number">130</argument>
@@ -45,5 +48,51 @@
 
         <referenceBlock name="advanced-search-link" remove="true"/>
         <referenceBlock name="currency" remove="true"/>
+
+
+        <!--
+            Footer
+        -->
+        <move element="store_switcher" destination="top.links"/>
+        <referenceBlock name="catalog-search-advanced-link" remove="true"/>
+        <referenceBlock name="privacy-policy-link" remove="true"/>
+        <referenceBlock name="contact-us-link" remove="true"/>
+        <referenceBlock name="rss-link" remove="true"/>
+        <referenceBlock name="sales-guest-form-link" remove="true"/>
+        <referenceBlock name="search-term-popular-link" remove="true"/>
+        <referenceBlock name="amblog_link" remove="true"/>
+        <referenceBlock name="report.bugs" remove="true"/>
+        <move element="copyright" destination="before.body.end"/>
+
+        <referenceContainer name="footer">
+            <block class="Magento\Cms\Block\Block" name="footer_links_1">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer_links_1</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Cms\Block\Block" name="footer_links_2">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer_links_2</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Cms\Block\Block" name="footer_links_3">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer_links_3</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Cms\Block\Block" name="footer_links_4">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer_links_4</argument>
+                </arguments>
+            </block>
+            <container name="footer_links_5" htmlTag="div" htmlClass="links">
+                <block class="Magento\Cms\Block\Block" name="footer_links_social">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer_links_social</argument>
+                    </arguments>
+                </block>
+            </container>
+        </referenceContainer>
+        <move element="form.subscribe" destination="footer_links_5" before="footer_links_social"/>
     </body>
 </page>
