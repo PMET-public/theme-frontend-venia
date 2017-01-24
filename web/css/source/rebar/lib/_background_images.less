@@ -1,0 +1,23 @@
+.background-image-pixel-density(@image1x: '', @image2x: '') {
+    & when not (@image1x = '') {
+        background-image: ~`"url(@{image1x})"`;
+    }
+    & when not (@image2x = '') {
+        @media
+        only screen and (-webkit-min-device-pixel-ratio: 2),
+        only screen and (min--moz-device-pixel-ratio: 2),
+        only screen and (-o-min-device-pixel-ratio: 2/1),
+        only screen and (min-device-pixel-ratio: 2),
+        only screen and (min-resolution: 192dpi),
+        only screen and (min-resolution: 2dppx) {
+            background-image: ~`"url(@{image2x})"`;
+        }
+    }
+}
+
+.background-image(@image1x: '', @image2x: '', @position: center, @size: cover) {
+    .background-image-pixel-density(@image1x, @image2x);
+    background-size: @size;
+    background-repeat: no-repeat;
+    background-position: @position;
+}
