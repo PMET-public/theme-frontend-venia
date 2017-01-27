@@ -10,6 +10,13 @@
         <!--
             Header
         -->
+        <referenceContainer name="header.container">
+            <block class="Magento\Cms\Block\Block" name="promo_banner" before="-">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">promo_banner</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
         <referenceBlock name="logo">
             <arguments>
                 <argument name="logo_img_width" xsi:type="number">130</argument>
@@ -53,16 +60,37 @@
         <!--
             Footer
         -->
-        <move element="store_switcher" destination="top.links"/>
-        <referenceBlock name="catalog-search-advanced-link" remove="true"/>
-        <referenceBlock name="privacy-policy-link" remove="true"/>
-        <referenceBlock name="contact-us-link" remove="true"/>
+        <move element="store_switcher" destination="header.links" after="customer"/>
+        <move element="store_language" destination="header.links" before="customer"/>
         <referenceBlock name="rss-link" remove="true"/>
         <referenceBlock name="sales-guest-form-link" remove="true"/>
         <referenceBlock name="search-term-popular-link" remove="true"/>
         <referenceBlock name="amblog_link" remove="true"/>
         <referenceBlock name="report.bugs" remove="true"/>
-        <move element="copyright" destination="before.body.end"/>
+
+        <referenceContainer name="before.body.end">
+            <container name="sub.footer.links" htmlTag="ul" htmlClass="sub-footer-links small">
+                <block class="Magento\Framework\View\Element\Html\Link" name="customer-service-link">
+                    <arguments>
+                        <argument name="label" xsi:type="string">Customer Service</argument>
+                        <argument name="path" xsi:type="string">customer-service</argument>
+                    </arguments>
+                </block>
+            </container>
+            <container name="copyright.wrapper" htmlTag="div" htmlClass="copyright-wrapper">
+                <block class="Magento\Cms\Block\Block" name="magento-link">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">magento-link</argument>
+                    </arguments>
+                </block>
+            </container>
+        </referenceContainer>
+
+        <move element="privacy-policy-link" destination="sub.footer.links" before="customer-service-link"/>
+        <move element="catalog-search-advanced-link" destination="sub.footer.links" after="customer-service-link"/>
+        <move element="contact-us-link" destination="sub.footer.links" after="catalog-search-advanced-link"/>
+
+        <move element="copyright" destination="copyright.wrapper" before="magento-link"/>
 
         <referenceContainer name="footer">
             <block class="Magento\Cms\Block\Block" name="footer_links_1">
