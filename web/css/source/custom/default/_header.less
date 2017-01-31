@@ -2,33 +2,37 @@
     .page-wrapper .page-header {
         .panel.wrapper {
             border-bottom: none;
-            .panel.header > .header.links {
-                > li {
-                    font-size: @font-size__s;
-                    font-weight: bold;
-                    margin: 0 0 0 10px;
-                    &:not(.welcome) {
-                        text-transform: uppercase;
-                    }
-                    &:not(:last-child) {
-                        &:after {
-                            content: '|';
-                            padding-left: 10px;
+            .panel.header {
+                padding-left: 20px;
+                padding-right: 20px;
+                > .header.links {
+                    > li {
+                        font-size: @font-size__s;
+                        font-weight: bold;
+                        margin: 0 0 0 10px;
+                        &:not(.welcome) {
+                            text-transform: uppercase;
+                        }
+                        &:not(:last-child) {
+                            &:after {
+                                content: '|';
+                                padding-left: 10px;
+                            }
+                        }
+                        a {
+                            color: @primary__color;
                         }
                     }
-                    a {
-                        color: @primary__color;
-                    }
-                }
-                .customer-welcome {
-                    .lib-dropdown(
-                        @_toggle-selector: ~".customer-name",
-                        @_options-selector: ~".customer-menu",
-                        @_dropdown-actions-padding: 0;
-                    );
-                    .customer-links {
-                        padding: 0;
-                        list-style: none;
+                    .customer-welcome {
+                        .lib-dropdown(
+                            @_toggle-selector: ~".customer-name",
+                            @_options-selector: ~".customer-menu",
+                            @_dropdown-actions-padding: 0
+                        );
+                        .customer-links {
+                            padding: 0;
+                            list-style: none;
+                        }
                     }
                 }
             }

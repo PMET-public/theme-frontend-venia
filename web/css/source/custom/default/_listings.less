@@ -1,0 +1,108 @@
+/**
+ * @category    ClassyLlama
+ * @copyright   Copyright (c) 2017 Classy Llama
+ */
+
+& when (@media-common = true) {
+    .page-products {
+        .product-items {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .products-grid {
+            .product-item-info {
+                width: auto;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .product-item-details {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .product-item-name {
+            flex-grow: 1;
+            font-size: 16px;
+        }
+
+        .product-item .price-box {
+            margin: 0;
+
+            .price {
+                font-size: 16px;
+                font-weight: @font-weight__regular;
+            }
+        }
+
+        .swatch-option {
+            &.color {
+                float: none;
+                display: inline-block;
+                min-width: auto;
+                width: 19px;
+                height: 19px;
+                margin: 5px;
+                box-sizing: border-box;
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+    .page-products {
+        .products-grid {
+            .product-item {
+                width: 100%;
+            }
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__s) {
+    .page-products {
+        .products-grid {
+            .products {
+                .product-item {
+                    width: 100%/2;
+                }
+            }
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .page-products {
+        .columns {
+            .sidebar-main {
+                width: 230px;
+                padding-right: 30px;
+            }
+            .column.main {
+                width: calc(~"100% - 230px");
+            }
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    .page-products {
+        .products-grid {
+            .products {
+                &.product-items {
+                    margin-left: -@indent__base;
+                }
+
+                .product-item {
+                    width: 100%/3;
+                    margin: 0;
+                    padding-left: @indent__base;
+                }
+            }
+        }
+    }
+}
