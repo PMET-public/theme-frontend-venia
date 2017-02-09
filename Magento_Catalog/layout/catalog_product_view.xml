@@ -15,5 +15,10 @@
         <referenceContainer name="content">
             <container name="reviews.container" htmlClass="reviews-container" htmlTag="div" after="product.info.details"></container>
         </referenceContainer>
+        <referenceBlock name="product.info.description">
+            <arguments>
+                <argument name="at_label" xsi:type="string">default</argument>
+            </arguments>
+        </referenceBlock>
     </body>
 </page>
