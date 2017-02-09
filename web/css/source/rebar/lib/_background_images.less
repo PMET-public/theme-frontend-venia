@@ -1,3 +1,7 @@
+/*
+// Disabling this mixin until the issue where compiling with PHP results in this error:
+//      Sorry, can not do JavaScript evaluation in PHP...
+// Currently this mixin only works with Grunt compilation
 .background-image-pixel-density(@image1x: '', @image2x: '') {
     & when not (@image1x = '') {
         background-image: ~`"url(@{image1x})"`;
@@ -21,3 +25,4 @@
     background-repeat: no-repeat;
     background-position: @position;
 }
+*/

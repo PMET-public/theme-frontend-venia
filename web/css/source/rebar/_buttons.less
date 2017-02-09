@@ -1,0 +1,35 @@
+& when (@media-common = true) {
+    //Button styles
+    a.button, button.button {
+        .lib-button();
+        text-align: center;
+        .lib-css(border-radius, @button__border-radius);
+
+        &.action.primary {
+            .lib-button-primary();
+
+            &.small {
+                .lib-button-s();
+            }
+
+            &.large {
+                .lib-button-l();
+            }
+        }
+
+        &.small {
+            .lib-button-s();
+        }
+
+        &.large {
+            .lib-button-l();
+        }
+    }
+
+    a.button {
+        .lib-link-as-button();
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}

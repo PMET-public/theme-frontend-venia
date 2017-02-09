@@ -10,5 +10,10 @@
         <move element="page.main.title" destination="product.info.main" before="-"/>
         <move element="product.info.stock.sku" destination="product.info.price" after="product.price.final"/>
         <move element="product.info.review" destination="product.info.main" after="product.info.price"/>
+        <move element="product.info.description" destination="product.info.main" after="product.info.review"/>
+        <move element="reviews.tab" destination="reviews.container"/>
+        <referenceContainer name="content">
+            <container name="reviews.container" htmlClass="reviews-container" htmlTag="div" after="product.info.details"></container>
+        </referenceContainer>
     </body>
 </page>

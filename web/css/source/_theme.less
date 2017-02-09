@@ -1,9 +1,4 @@
-@import 'rebar/_grid.less';
-@import 'rebar/_fluid_typography.less';
-@import 'rebar/_responsive_utilities.less';
-@import 'rebar/lib/_css_browser_prefixes.less';
-@import 'rebar/_aspect_ratios.less';
-@import 'rebar/_background_images.less';
+@import 'custom/lib/_colors.less';
 
 @navigation__background: transparent;
 @font-family-name__base: 'Karla';
@@ -20,20 +15,6 @@
 @button__hover__border: 1px solid darken(@button__background, 5%);
 @button__hover__background: darken(@button__background, 5%);
 
-@collapsible-nav-color: @color-gray34;
-@collapsible-nav-current-color: @color-black;
-
-@filter-title-background-color: @color-gray94;
-@filter-link: @color-gray-darken4;
-@filter-link-hover: darken(@filter-link, 30%);
-@filter-quantity: @color-gray52;
-
-@button__shadow: inset 0 1px 0 0 rgba(255, 255, 255, 1), inset 0 -1px 0 0 fade(@border-color__base, 30); //  Used for secondary button and catalog toolbar controls
-@button__shadow-active: inset 0 1px 0 0 fade(@border-color__base, 80), inset 0 -1px 0 0 fade(@border-color__base, 30); //  Used for secondary button and catalog toolbar controls
-
-@total-columns: 12;
-@layout-column__sidebar-width: 3;
-
 @link__color: @theme-color1;
 @link__hover__color: darken(@link__color, 10%);
 
@@ -41,3 +22,5 @@
 
 @dropdown-toggle-icon__content: @icon-down;
 @dropdown-toggle-icon__active__content: @icon-up;
+
+@rating-icon__active__color: @theme-color1;
