@@ -11,37 +11,56 @@
         }
         .panel.wrapper {
             border-bottom: none;
-            .panel.header {
-                padding-left: 20px;
-                padding-right: 20px;
-                > .header.links {
-                    > li {
-                        font-size: @font-size__s;
+            background: none;
+            .panel.header > .header.links {
+                .lib-vendor-prefix-display();
+                justify-content: flex-end;
+                font-size: @font-size__s;
+                font-weight: bold;
+                > div {
+                    font-size: @font-size__s;
+                    font-weight: bold;
+                    margin-right: 0;
+                    strong {
                         font-weight: bold;
-                        margin: 0 0 0 10px;
-                        &:not(.welcome) {
-                            text-transform: uppercase;
-                        }
-                        &:not(:last-child) {
-                            &:after {
-                                content: '|';
-                                padding-left: 10px;
-                            }
-                        }
-                        a {
-                            color: @primary__color;
+                        text-transform: uppercase;
+                    }
+                    .options .action.toggle,
+                    &.customer-welcome .customer-name {
+                        &.active:after,
+                        &:after {
+                            line-height: 14px;
+                            width: 14px;
                         }
                     }
-                    .customer-welcome {
-                        .lib-dropdown(
-                            @_toggle-selector: ~".customer-name",
-                            @_options-selector: ~".customer-menu",
-                            @_dropdown-actions-padding: 0
-                        );
-                        .customer-links {
-                            padding: 0;
-                            list-style: none;
+                    &:not(.welcome) {
+                        text-transform: uppercase;
+                    }
+                    &:not(:last-child) {
+                        &:after {
+                            content: '|';
+                            padding: 0 10px;
+                            display: inline-block;
+                            clear: none;
+
                         }
+                    }
+                    a {
+                        color: @primary__color;
+                    }
+                }
+                .greet.welcome {
+                    display: none;
+                }
+                .customer-welcome {
+                    .lib-dropdown(
+                        @_toggle-selector: ~".customer-name",
+                        @_options-selector: ~".customer-menu",
+                        @_dropdown-actions-padding: 0
+                    );
+                    .customer-links {
+                        padding: 0;
+                        list-style: none;
                     }
                 }
             }
