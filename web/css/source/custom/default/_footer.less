@@ -70,12 +70,10 @@
                     color: @primary__color;
                 }
             }
-            &:not(:last-child) {
-                &:after {
-                    color: @color-gray-middle3;
-                    padding: 0 10px;
-                    content: '|';
-                }
+            &:not(:last-child):after {
+                color: @color-gray-middle3;
+                padding: 0 10px;
+                content: '|';
             }
         }
     }

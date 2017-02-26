@@ -36,14 +36,11 @@
                     &:not(.welcome) {
                         text-transform: uppercase;
                     }
-                    &:not(:last-child) {
-                        &:after {
-                            content: '|';
-                            padding: 0 10px;
-                            display: inline-block;
-                            clear: none;
-
-                        }
+                    &:not(:last-child):after {
+                        content: '|';
+                        padding: 0 10px;
+                        display: inline-block;
+                        clear: none;
                     }
                     a {
                         color: @primary__color;

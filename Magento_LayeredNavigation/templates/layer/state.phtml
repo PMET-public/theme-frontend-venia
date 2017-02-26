@@ -25,6 +25,7 @@
         <?php foreach ($_filters as $_filter): ?>
             <li class="item">
                 <span class="filter-label"><?php echo $block->escapeHtml(__($_filter->getName())); ?></span>
+                <!-- EDIT (span.filter-value moved below) -->
                 <?php
                 $clearLinkUrl = $_filter->getClearLinkUrl();
                 $currentFilterName = $block->escapeHtml(__($_filter->getName())) . " " . $block->stripTags($_filter->getLabel());
@@ -45,7 +46,9 @@
                         <span><?php /* @escapeNotVerified */ echo __('Remove This Item') ?></span>
                     </a>
                 <?php endif; ?>
+                <!-- BEGIN EDIT (span.filter-value moved from above) -->
                 <span class="filter-value"><?php /* @escapeNotVerified */ echo $block->stripTags($_filter->getLabel()) ?></span>
+                <!-- END EDIT -->
             </li>
         <?php endforeach; ?>
     </ol>
