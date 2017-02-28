@@ -165,6 +165,10 @@
 
         // Product grid
 
+    }
+
+    // Generic product listing styles that may be on pages other than .page-products, such as in widgets:
+    .column.main {
         .product-items {
             display: flex;
             flex-wrap: wrap;
@@ -177,8 +181,11 @@
             flex-direction: column;
             align-items: center;
 
-            &:not(:hover) .product-item-inner {
-                visibility: hidden;
+            &:not(:hover) {
+                .product-item-inner,
+                .product-item-actions {
+                    visibility: hidden;
+                }
             }
         }
 
@@ -192,6 +199,7 @@
 
         .product-item-name {
             flex-grow: 1;
+            margin-top: 10px;
             font-size: 16px;
         }
 
@@ -265,6 +273,13 @@
             margin-bottom: -50px;
         }
     }
+
+    // Generic product listing styles that may be on pages other than .page-products, such as in widgets:
+    .column.main {
+        .block-content .product-item-details {
+            margin-bottom: -30px;
+        }
+    }
 }
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .page-products {
@@ -297,6 +312,13 @@
             @media (min-width: 1160px) {
                 width: 100%/3;
             }
+        }
+    }
+
+    // Generic product listing styles that may be on pages other than .page-products, such as in widgets:
+    .column.main {
+        .products-grid .product-item {
+            margin-bottom: 0;
         }
     }
 }

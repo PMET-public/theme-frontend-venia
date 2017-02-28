@@ -20,5 +20,6 @@
                 <argument name="at_label" xsi:type="string">default</argument>
             </arguments>
         </referenceBlock>
+        <move element="catalog.product.related" destination="content" before="reviews.container" />
     </body>
 </page>
