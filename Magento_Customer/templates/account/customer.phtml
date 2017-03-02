@@ -1,0 +1,42 @@
+<!--
+/**
+ * @category    ClassyLlama
+ * @copyright   Copyright (c) 2017 Classy Llama
+ */
+-->
+<?php if($block->customerLoggedIn()): ?>
+<div class="customer-welcome">
+    <span class="customer-name"
+          role="link"
+          tabindex="0"
+          data-mage-init='{"dropdown":{}}'
+          data-toggle="dropdown"
+          data-trigger-keypress-button="true"
+          data-bind="scope: 'customer'">
+            <span data-bind="text: customer().fullname"></span>
+    </span>
+    <script type="text/x-magento-init">
+        {
+            "*": {
+                "Magento_Ui/js/core/app": {
+                    "components": {
+                        "customer": {
+                            "component": "Magento_Customer/js/view/customer"
+                        }
+                    }
+                }
+            }
+        }
+        </script>
+    <?php if($block->getChildHtml()):?>
+        <div class="customer-menu" data-target="dropdown">
+            <?php echo $block->getChildHtml('customer.links');?>
+        </div>
+    <?php endif; ?>
+</div>
+<?php else: ?>
+    <div>
+        <a href="<?= $block->getUrl('customer/account/login') ?>"><?= __('Register/Sign in'); ?></a>
+    </div>
+<?php endif; ?>
+
