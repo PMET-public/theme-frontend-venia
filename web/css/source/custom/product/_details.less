@@ -45,6 +45,62 @@
                     }
                 }
             }
+            .instorepickup-pdp-wrapper {
+                margin-bottom: 0;
+
+                .instorepickup-change-trigger {
+                    color: @link__color;
+
+                    &:hover {
+                        color: @link__hover__color;
+                    }
+                }
+
+                .addtocart-mode .form-list {
+                    margin-bottom: 0;
+
+                    .control {
+                        margin-bottom: 0;
+                        border-color: transparent;
+                        padding-left: 0;
+                        background: transparent;
+
+                        .option {
+                            label {
+                                font-weight: @font-weight__bold;
+                                text-transform: uppercase;
+
+                                div:not(:first-child) {
+                                    font-weight: @font-weight__regular;
+                                    font-size: 12px;
+                                }
+                                b {
+                                    font-weight: @font-weight__regular;
+                                }
+                            }
+
+                            .home-label:after {
+                                .truck-icon();
+                            }
+                        }
+
+                        .address > .label > div {
+                            &:before {
+                                font-family: @icons__font-name;
+                                line-height: 28px;
+                            }
+
+                            .instorepickup-change-trigger {
+                                color: @link__color;
+
+                                &:hover {
+                                    color: @link__hover__color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
             .product-info-price {
                 border-bottom: none;
                 margin: 0;
@@ -86,7 +142,7 @@
                     }
                     &.tocompare:before {
                         font-family: @icons__font-name;
-                        content: @icon-compare-empty;
+                        content: @icon-compare-full;
                     }
                     &:before {
                         color: @link__color;
@@ -95,6 +151,8 @@
                         width: 35px;
                         font-weight: 100;
                         vertical-align: middle;
+                        -webkit-font-smoothing: antialiased;
+                        -moz-osx-font-smoothing: grayscale;
                     }
                     &:not(.mailto):after {
                         font-size: 15px;
@@ -102,6 +160,9 @@
                         vertical-align: middle;
                         padding: 0 5px;
                         content: '|';
+                        color: @link__color;
+                        -webkit-font-smoothing: antialiased;
+                        -moz-osx-font-smoothing: grayscale;
                     }
                     &.mailto {
                         margin: 0;
