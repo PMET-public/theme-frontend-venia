@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <!--
 /**
- * Copyright © 2016 Magento. All rights reserved.
- * See COPYING.txt for license details.
+ * @category    ClassyLlama
+ * @copyright   Copyright (c) 2017 Classy Llama
  */
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
@@ -10,5 +10,16 @@
         <move element="page.main.title" destination="product.info.main" before="-"/>
         <move element="product.info.stock.sku" destination="product.info.price" after="product.price.final"/>
         <move element="product.info.review" destination="product.info.main" after="product.info.price"/>
+        <move element="product.info.description" destination="product.info.main" after="product.info.review"/>
+        <move element="reviews.tab" destination="reviews.container"/>
+        <referenceContainer name="content">
+            <container name="reviews.container" htmlClass="reviews-container" htmlTag="div" after="product.info.details"></container>
+        </referenceContainer>
+        <referenceBlock name="product.info.description">
+            <arguments>
+                <argument name="at_label" xsi:type="string">default</argument>
+            </arguments>
+        </referenceBlock>
+        <move element="catalog.product.related" destination="content" before="reviews.container" />
     </body>
 </page>

@@ -1,11 +1,12 @@
-// /**
-//  * Copyright © 2016 Magento. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+/**
+ * @category    ClassyLlama
+ * @copyright   Copyright (c) 2017 Classy Llama
+ */
 
 //
 //  Common
 //  _____________________________________________
+@font-family-name__social: 'social-icons';
 
 & when (@media-common = true) {
     .lib-font-face(
@@ -40,6 +41,13 @@
     .lib-font-face(
         @family-name: @font-family-name__base,
         @font-path: '@{baseDir}fonts/Tenor_Sans/TenorSans',
+        @font-weight: normal,
+        @font-style: normal
+    );
+
+    .lib-font-face(
+        @family-name: @font-family-name__social,
+        @font-path: '@{baseDir}fonts/social-icons/social-icons',
         @font-weight: normal,
         @font-style: normal
     );
