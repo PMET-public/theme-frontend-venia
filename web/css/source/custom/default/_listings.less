@@ -164,12 +164,17 @@
         }
 
         // Product grid
+
         .swatch-option.color {
             min-width: auto;
             width: 19px;
             height: 19px;
             margin: 5px 10px 5px 0;
             box-sizing: border-box;
+        }
+
+        .product-item .tocart {
+            display: none;
         }
     }
 
@@ -181,19 +186,16 @@
         }
 
         .products-grid {
+            .product-item {
+                margin-bottom: 40px;
+            }
+
             .product-item-info {
                 width: auto;
                 height: 100%;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-
-                &:not(:hover) {
-                    .product-item-inner,
-                    .product-item-actions {
-                        visibility: hidden;
-                    }
-                }
             }
 
             .product-item-inner {
@@ -229,10 +231,14 @@
             display: flex;
             justify-content: center;
             margin-top: 5px;
+
+            > .swatch-option:last-child {
+                margin-right: 0;
+            }
         }
 
-        .swatch-attribute-options > .swatch-option.color:last-child {
-            margin-right: 0;
+        .product-item-actions .actions-secondary .action {
+            float: left;
         }
     }
 }
@@ -271,16 +277,15 @@
         .products-grid .products .product-item {
             width: 100%/2;
         }
-
-        .product-item-details {
-            margin-bottom: -50px;
-        }
     }
 
     // Generic product listing styles that may be on pages other than .page-products, such as in widgets:
     .column.main {
-        .block-content .product-item-details {
-            margin-bottom: -30px;
+        .products-grid {
+            .product-item-actions {
+                margin: 6px 0;
+                overflow: hidden;
+            }
         }
     }
 }
@@ -315,13 +320,6 @@
             @media (min-width: 1160px) {
                 width: 100%/3;
             }
-        }
-    }
-
-    // Generic product listing styles that may be on pages other than .page-products, such as in widgets:
-    .column.main {
-        .products-grid .product-item {
-            margin-bottom: 0;
         }
     }
 }
