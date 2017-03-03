@@ -2,6 +2,17 @@
  * @category    ClassyLlama
  * @copyright   Copyright (c) 2017 Classy Llama
  */
+& when (@media-common = true) {
+    .page-wrapper .page-header {
+        #switcher-instorepickup {
+            display: block;
+
+            .ui-dialog {
+                display: none !important; // Overrides inline style
+            }
+        }
+    }
+}
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .page-wrapper .page-header {

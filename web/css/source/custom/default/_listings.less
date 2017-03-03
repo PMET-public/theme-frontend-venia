@@ -109,7 +109,7 @@
             }
         }
 
-        // Compar / Wishlist
+        // Compare / Wishlist
 
         .block-compare,
         .block-wishlist {
@@ -164,7 +164,13 @@
         }
 
         // Product grid
-
+        .swatch-option.color {
+            min-width: auto;
+            width: 19px;
+            height: 19px;
+            margin: 5px 10px 5px 0;
+            box-sizing: border-box;
+        }
     }
 
     // Generic product listing styles that may be on pages other than .page-products, such as in widgets:
@@ -174,18 +180,25 @@
             flex-wrap: wrap;
         }
 
-        .products-grid .product-item-info {
-            width: auto;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        .products-grid {
+            .product-item-info {
+                width: auto;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
 
-            &:not(:hover) {
-                .product-item-inner,
-                .product-item-actions {
-                    visibility: hidden;
+                &:not(:hover) {
+                    .product-item-inner,
+                    .product-item-actions {
+                        visibility: hidden;
+                    }
                 }
+            }
+
+            .product-item-inner {
+                background: white;
+                z-index: 2;
             }
         }
 
@@ -213,23 +226,13 @@
         }
 
         .swatch-attribute-options {
+            display: flex;
+            justify-content: center;
             margin-top: 5px;
         }
 
-        .swatch-option.color {
-            min-width: auto;
-            width: 19px;
-            height: 19px;
-            margin: 5px 10px 5px 0;
-            box-sizing: border-box;
-        }
         .swatch-attribute-options > .swatch-option.color:last-child {
             margin-right: 0;
-        }
-
-        .product-item-inner {
-            background: white;
-            z-index: 2;
         }
     }
 }

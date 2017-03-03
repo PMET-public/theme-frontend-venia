@@ -1,0 +1,49 @@
+<?php
+/**
+ * @var $block \MagentoEse\InStorePickup\Block\StoreSelectorScopePrivate
+ */
+?>
+<?php
+/** @var $storeLocation \MagentoEse\InStorePickup\Model\StoreLocation */
+$storeLocation = $block->getChosenStoreLocation();
+?>
+<?php if($block->hasStoreBeenChosen()): ?>
+    <p class="availability-label">
+        <?php echo __('Availability') ?>:
+        <span class="availability-result"><?php echo __('In Store') ?></span>
+    </p>
+
+    <!-- EDIT: Added span around store name to enable separate styling -->
+    <p><?php echo __('My Store') ?>: <span><?php echo $storeLocation->getName() ?></span></p>
+
+    <div class="addtocart-mode" data-mage-init='{"inStorePickupProduct":{}}'>
+        <ul class="form-list">
+            <li class="control selected-radio">
+                <div class="option">
+                    <input type="radio" class="radio" checked="checked" value="ship-to-home" id="ship-to-home" name="instorepickup_addtocart_method">
+                    <label for="ship-to-home" class="home-label"><?php echo __('Ship to Home') ?></label>
+                </div>
+            </li>
+            <li class="control">
+                <div class="option">
+                    <input type="radio" class="radio" value="pick-up" id="pick-up" name="instorepickup_addtocart_method">
+                    <label for="pick-up">
+                        <div><?php echo __('Pick up in your local store') ?></div>
+                        <div><?php echo __('Available for pickup') ?> <b><?php echo __('TODAY') ?></b></div>
+                    </label>
+                </div>
+                <div class="address">
+                    <span class="label">
+                        <div>
+                            <label><b><?php echo $storeLocation->getName(); ?></b> <span class="action instorepickup-change-trigger"><?php echo __('Change') ?></span></label>
+                            <address><?php echo $storeLocation->getStreetAddress(); ?><br><?php echo $storeLocation->getCity(); ?>, <?php echo $storeLocation->getState(); ?> <?php echo $storeLocation->getPostalCode(); ?><br><?php echo $storeLocation->getPhone(); ?></address>
+                        </div>
+                    </span>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+<?php else: ?>
+    <span class="instorepickup-change-trigger"><?php echo __('Check in-store availability') ?></span>
+<?php endif; ?>
