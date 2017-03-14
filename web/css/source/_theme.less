@@ -5,7 +5,7 @@
 
 @import 'custom/lib/_colors.less';
 
-@navigation__background: transparent;
+@navigation-desktop__background: transparent;
 @font-family-name__base: 'Karla';
 @navigation-level0-item__active__border-color: @primary__color;
 @navigation-desktop-level0-item__active__border-color: @primary__color;
@@ -35,3 +35,17 @@
 @pager-item__padding: 0 8px ;
 @pager-action__border: false;
 @pager-action__hover__color: @pager__hover__color;
+
+.truck-icon() {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 14px;
+    background: url(../images/truck.png) no-repeat;
+    vertical-align: middle;
+
+    @media (-webkit-min-device-pixel-ratio: 2), not all, not all, not all, (min-resolution: 192dpi), (min-resolution: 2dppx) {
+        background: url(../images/truck@2x.png) no-repeat;
+        background-size: 24px, 14px;
+    }
+}
