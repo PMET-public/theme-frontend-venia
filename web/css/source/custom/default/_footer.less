@@ -4,7 +4,7 @@
  */
 
 & when (@media-common = true) {
-    footer {
+    footer:not(.modal-footer) {
         background-color: @panel__background-color;
         padding-bottom: 0;
         padding-top: 30px;
@@ -101,7 +101,7 @@
 }
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xs) {
-    body footer .footer.content {
+    body footer:not(.modal-footer) .footer.content {
         .lib-vendor-prefix-flex-direction(row);
         .lib-vendor-prefix-flex-wrap(wrap);
         .links {
@@ -122,7 +122,7 @@
 }
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
-    body footer .footer.content {
+    body footer:not(.modal-footer) .footer.content {
         text-align: left;
     }
 }
