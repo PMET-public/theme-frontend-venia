@@ -3,11 +3,13 @@
  * @copyright   Copyright (c) 2017 Classy Llama
  */
 & when (@media-common = true) {
-    .page-wrapper .page-header {
-        #switcher-instorepickup {
-            .ui-dialog {
-                display: none !important; // Overrides inline style
-            }
+    .page-wrapper {
+        .page-header #switcher-instorepickup .ui-dialog {
+            display: none !important; // Overrides inline style
+        }
+
+        .minicart-wrapper .action.showcart .counter.qty {
+            background: @theme-color1;
         }
     }
 
