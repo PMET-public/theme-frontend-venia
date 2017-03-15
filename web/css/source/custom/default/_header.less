@@ -2,6 +2,104 @@
  * @category    ClassyLlama
  * @copyright   Copyright (c) 2017 Classy Llama
  */
+& when (@media-common = true) {
+    .page-wrapper {
+        .page-header #switcher-instorepickup .ui-dialog {
+            display: none !important; // Overrides inline style
+        }
+
+        .minicart-wrapper .action.showcart .counter.qty {
+            background: @theme-color1;
+        }
+    }
+
+    .modals-wrapper {
+        .instorepickup-storeselector-popup {
+            &.modal-slide {
+                left: 0;
+
+                &._inner-scroll .modal-inner-wrap {
+                    min-height: auto;
+                    margin: 5rem auto;
+                    background: @color-white;
+                }
+            }
+
+            .modal-header h1 {
+                padding: 28px 28px 12px;
+            }
+
+            .modal-content {
+                .input-box {
+                    background: transparent;
+
+                    fieldset {
+                        width: 100%;
+                        margin: 0;
+                        padding: 0 28px;
+                        box-sizing: border-box;
+
+                        input {
+                            border-width: 0 0 1px;
+                            border-color: black;
+                            border-radius: 0;
+                            padding: 0;
+                        }
+                    }
+
+                    button {
+                        top: 15px;
+                        right: 28px;
+
+                        &:not(:hover):before {
+                            color: @text__color;
+                        }
+                    }
+                }
+
+                .result {
+                    padding-bottom: 28px;
+
+                    .result-summary {
+                        padding: 20px 28px 0;
+                    }
+
+                    ul {
+                        padding: 0 28px;
+
+                        li form {
+                            width: calc(~"100% - 120px");
+                            padding-left: 22px;
+                            box-sizing: border-box;
+
+                            &:before {
+                                content: @icon-location;
+                                font-family: @icons__font-name;
+                                font-size: 30px;
+                                line-height: 20px;
+                                position: absolute;
+                                left: -7px;
+                            }
+
+                            > span {
+                                display: inline-block;
+                                float: none !important;
+                                margin-top: 8px;
+                            }
+
+                            button {
+                                .lib-button-as-link();
+                                bottom: auto;
+                                top: 15px;
+                                right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .page-wrapper .page-header {

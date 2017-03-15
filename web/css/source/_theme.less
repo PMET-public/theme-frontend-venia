@@ -5,17 +5,22 @@
 
 @import 'custom/lib/_colors.less';
 
-@navigation__background: transparent;
+@navigation-desktop__background: transparent;
 @font-family-name__base: 'Karla';
 @navigation-level0-item__active__border-color: @primary__color;
 @navigation-desktop-level0-item__active__border-color: @primary__color;
+@submenu-item__active__border-color: @theme-color1;
+@submenu-desktop-item__active__border-color: @theme-color1;
+
+@account-nav-current-border-color: @theme-color1;
+@collapsible-nav-current-border-color: @theme-color1;
 
 @button-primary__background: @theme-color1;
 @button-primary__border: 1px solid @button-primary__background;
 @button-primary__hover__border: 1px solid darken(@button-primary__background, 5%);
 @button-primary__hover__background: darken(@button-primary__background, 5%);
 
-@button__background: @theme-color3;
+@button__background: @theme-color2;
 @button__border: 1px solid @button__background;
 @button__hover__border: 1px solid darken(@button__background, 5%);
 @button__hover__background: darken(@button__background, 5%);
@@ -35,3 +40,20 @@
 @pager-item__padding: 0 8px ;
 @pager-action__border: false;
 @pager-action__hover__color: @pager__hover__color;
+
+@checkout-progress-bar-item__active__background-color: @theme-color1;
+@checkout-shipping-item__active__border-color: @theme-color1;
+
+.truck-icon() {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 14px;
+    background: url(../images/truck.png) no-repeat;
+    vertical-align: middle;
+
+    @media (-webkit-min-device-pixel-ratio: 2), not all, not all, not all, (min-resolution: 192dpi), (min-resolution: 2dppx) {
+        background: url(../images/truck@2x.png) no-repeat;
+        background-size: 24px, 14px;
+    }
+}
