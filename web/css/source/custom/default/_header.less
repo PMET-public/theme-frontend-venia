@@ -1,0 +1,111 @@
+/**
+ * @category    ClassyLlama
+ * @copyright   Copyright (c) 2017 Classy Llama
+ */
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .page-wrapper .page-header {
+        margin-bottom: 15px;
+        border-bottom: @border-width__base solid @theme-color4;
+        .promo-banner {
+            text-align: center;
+            padding: 5px;
+            text-transform: uppercase;
+            font-weight: bold;
+            background-color: @theme-color3;
+        }
+        .panel.wrapper {
+            border-bottom: none;
+            background: none;
+            .panel.header > .header.links {
+                .lib-vendor-prefix-display();
+                justify-content: flex-end;
+                font-size: @font-size__s;
+                font-weight: bold;
+                > div {
+                    font-size: @font-size__s;
+                    font-weight: bold;
+                    margin-right: 0;
+                    strong {
+                        font-weight: bold;
+                        text-transform: uppercase;
+                    }
+                    .options .action.toggle,
+                    &.customer-welcome .customer-name {
+                        &.active:after,
+                        &:after {
+                            line-height: 14px;
+                            width: 14px;
+                        }
+                    }
+                    &:not(.welcome) {
+                        text-transform: uppercase;
+                    }
+                    &:not(:last-child):after {
+                        content: '|';
+                        padding: 0 10px;
+                        display: inline-block;
+                        clear: none;
+                    }
+                    a {
+                        color: @primary__color;
+                    }
+                }
+                .greet.welcome {
+                    display: none;
+                }
+                .customer-welcome {
+                    .lib-dropdown(
+                        @_toggle-selector: ~".customer-name",
+                        @_options-selector: ~".customer-menu",
+                        @_dropdown-actions-padding: 0
+                    );
+                    .customer-links {
+                        padding: 0;
+                        list-style: none;
+                    }
+                }
+            }
+        }
+        .header.content {
+            padding: 0 20px;
+            .lib-vendor-prefix-display();
+            .header-layout-helper {
+                .lib-vendor-prefix-display();
+                .lib-vendor-prefix-flex-grow(1);
+                .lib-vendor-prefix-flex-direction(column);
+                justify-content: space-between;
+            }
+            .logo {
+                align-self: center;
+                margin: 0 20px 20px 0;
+            }
+            .block-search .control {
+                padding: 0;
+            }
+        }
+        .block-search {
+            .control input {
+                border-bottom: 2px solid @primary__color;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+                padding-left: 0;
+                padding-right: 30px;
+                &:focus {
+                    box-shadow: none;
+                }
+                &::-webkit-input-placeholder {
+                    color: @primary__color;
+                }
+            }
+            .actions button {
+                opacity: 1;
+                right: 0;
+                &:before {
+                    color: @primary__color;
+                }
+            }
+        }
+    }
+}
