@@ -20,6 +20,12 @@
                 <argument name="at_label" xsi:type="string">default</argument>
             </arguments>
         </referenceBlock>
-        <move element="catalog.product.related" destination="content" before="reviews.container" />
+        <move element="product.info.upsell" destination="content" before="reviews.container" />
+        <referenceBlock name="product.info.upsell">
+            <action method="setItemLimit">
+                <argument name="type" xsi:type="string">upsell</argument>
+                <argument name="limit" xsi:type="string">4</argument>
+            </action>
+        </referenceBlock>
     </body>
 </page>

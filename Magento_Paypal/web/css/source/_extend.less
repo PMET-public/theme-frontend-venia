@@ -1,0 +1,31 @@
+& when (@media-common = true) {
+    .paypal.checkout.before:before {
+        display: none;
+    }
+    .catalog-product-view .product-info-main .product-options-bottom .box-tocart .actions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        > * {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .catalog-product-view .product-info-main .product-options-bottom .box-tocart .actions {
+        .tocart {
+            flex: 1;
+            width: 100%;
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    .catalog-product-view .product-info-main .product-options-bottom .box-tocart .actions {
+        flex-direction: row;
+        .tocart {
+            margin-right: 20px;
+        }
+    }
+}
