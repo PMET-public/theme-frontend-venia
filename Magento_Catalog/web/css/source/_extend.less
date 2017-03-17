@@ -79,11 +79,17 @@
             .product-social-links {
                 .lib-vendor-prefix-display();
                 align-items: center;
+                margin-bottom: 20px;
+                margin-top: -20px;
+                .product-addto-links {
+                    margin: 0;
+                }
                 .action {
                     margin-right: 0;
                     padding: 0;
                     background: none;
                     border: none;
+                    color: @link__color;
                     &.towishlist:before {
                         font-family: @icons__font-name;
                         content: @icon-wishlist-empty;
@@ -93,10 +99,10 @@
                         content: @icon-compare-empty;
                     }
                     &:before {
-                        color: @link__color;
                         font-size: 35px;
                         line-height: 35px;
                         width: 35px;
+                        margin: -5px;
                         font-weight: 100;
                         vertical-align: middle;
                     }
@@ -128,42 +134,57 @@
                 }
             }
         }
-        .reviews-container .review-items .review-item {
-            .lib-vendor-prefix-display();
-            .lib-vendor-prefix-flex-direction(column);
-            border-bottom: none;
-            border-top: 1px solid @border-color__base;
-            .review-title {
-                order: 1;
-            }
-            .review-content {
-                order: 2;
-                margin-left: 0;
-            }
-            .review-details {
-                order: 3;
-                margin-left: 0;
-                .review-author {
-                    float: left;
-                    .review-details-value {
-                        font-weight: normal;
+        .reviews-container {
+            .review-fieldset {
+                .review-legend {
+                    span,
+                    strong {
+                        .lib-heading(h2);
+                        line-height: 0;
                     }
                 }
-                .review-date {
-                    float: left;
+                .field .label span {
+                    text-transform: uppercase;
                 }
             }
-            .review-ratings {
-                order: 4;
-                max-width: none;
-                .rating-summary.item {
-                    float: left;
-                    padding-right: 20px;
-                    .rating-label {
-                        display: block;
+            .review-items .review-item {
+                .lib-vendor-prefix-display();
+                .lib-vendor-prefix-flex-direction(column);
+                border-bottom: none;
+                border-top: 1px solid @border-color__base;
+                .review-title {
+                    order: 1;
+                }
+                .review-content {
+                    order: 2;
+                    margin-left: 0;
+                    margin-right: 15%;
+                }
+                .review-details {
+                    order: 3;
+                    margin-left: 0;
+                    .review-author {
+                        float: left;
+                        .review-details-value {
+                            font-weight: normal;
+                        }
                     }
-                    .rating-result {
-                        display: block;
+                    .review-date {
+                        float: left;
+                    }
+                }
+                .review-ratings {
+                    order: 4;
+                    max-width: none;
+                    .rating-summary.item {
+                        float: left;
+                        padding-right: 20px;
+                        .rating-label {
+                            display: block;
+                        }
+                        .rating-result {
+                            display: block;
+                        }
                     }
                 }
             }
@@ -178,31 +199,69 @@
             }
         }
 
-        .block.related {
+        .block.related,
+        .block.upsell{
             clear: both;
-            margin-top: 30px;
+            margin: 30px 0;
             border-top: 1px solid @border-color__base;
             border-bottom: 1px solid @border-color__base;
-            padding-top: 40px;
-
             .title {
                 text-align: center;
-
                 &.block-title strong {
-                    font-size: 22px;
-                    font-weight: @font-weight__regular;
+                    display: block;
+                    text-align: center;
+                    .lib-heading(h2);
                 }
             }
 
             .products {
-                margin: 40px 0;
+                margin: 40px 0 60px;
+                li.product {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+
+        .product-info-main .product-info-price .price-box {
+            display: flex;
+            align-items: center;
+            .old-price {
+                color: @color-gray-middle2;
+            }
+            .price {
+                margin-right: 20px;
+            }
+            .price-label {
+                display: none;
             }
         }
     }
+    body.category-shop-the-look .columns .column.main {
+        width: 100%;
+    }
+    body .swatch-attribute.size .swatch-option {
+        background: transparent;
+        border: none;
+        min-width: auto;
+        &:hover {
+            outline: none;
+            border-style: solid;
+            border-color: #999;
+            border-width: 0 0 2px;
+        }
+    }
 }
-
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__s) {
+    body.catalog-product-view {
+        .block.related,
+        .block.upsell .products li.product {
+            width: 100%/2;
+        }
+    }
+}
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
-    .catalog-product-view {
+    body.catalog-product-view {
         .product-info-main {
             float: left;
             .price-box {
@@ -232,9 +291,16 @@
         }
     }
 }
-
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    body.catalog-product-view {
+        .block.related,
+        .block.upsell .products li.product {
+            width: 100%/4;
+        }
+    }
+}
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__ll) {
-    .catalog-product-view {
+    body.catalog-product-view {
         .reviews-container {
             .lib-vendor-prefix-display();
             #product-review-container {
@@ -501,7 +567,6 @@
         }
     }
 }
-
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
     .page-products {
         .filter-current {
@@ -526,7 +591,6 @@
         }
     }
 }
-
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__s) {
     .page-products {
         .filter-options {
