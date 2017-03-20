@@ -136,12 +136,15 @@
         }
     }
 
-    .minicart-wrapper .action.showcart:before {
-        font-family: @font-family-name__venia;
-        content: '\e900';
-        font-size: 22px;
-        line-height: 30px;
-        margin-right: 5px;
+    .minicart-wrapper .action.showcart {
+        &.action:before,
+        &:before {
+            font-family: @font-family-name__venia;
+            content: '\e900';
+            font-size: 22px;
+            line-height: 30px;
+            margin-right: 5px;
+        }
     }
 }
 
