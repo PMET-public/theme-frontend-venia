@@ -21,12 +21,12 @@
                 <height>165</height>
             </image>
             <image id="category_page_grid" type="small_image">
-                <width>240</width>
-                <height>300</height>
+                <width>300</width>
+                <height>375</height>
             </image>
             <image id="category_page_grid-1" type="small_image">
-                <width>240</width>
-                <height>300</height>
+                <width>300</width>
+                <height>375</height>
             </image>
             <image id="category_page_list" type="small_image">
                 <width>240</width>
@@ -166,8 +166,8 @@
                 <height>90</height>
             </image>
             <image id="upsell_products_list" type="small_image">
-                <width>152</width>
-                <height>190</height>
+                <width>252</width>
+                <height>315</height>
             </image>
             <image id="wishlist_sidebar_block" type="thumbnail">
                 <width>75</width>
