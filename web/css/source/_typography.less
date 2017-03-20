@@ -8,6 +8,7 @@
 //  _____________________________________________
 @font-family-name__social: 'social-icons';
 @font-family-name__secondary: 'tenor-sans';
+@font-family-name__venia: 'venia';
 
 & when (@media-common = true) {
     .lib-font-face(
@@ -52,8 +53,14 @@
         @font-weight: normal,
         @font-style: normal
     );
-}
 
+    .lib-font-face(
+        @family-name: @font-family-name__venia,
+        @font-path: '@{baseDir}fonts/venia/venia',
+        @font-weight: normal,
+        @font-style: normal
+    );
+}
 
 //
 //  Common

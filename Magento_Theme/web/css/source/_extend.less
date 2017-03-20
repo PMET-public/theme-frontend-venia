@@ -31,8 +31,17 @@
 //  _____________________________________________
 & when (@media-common = true) {
     .page-wrapper {
-        .page-header #switcher-instorepickup .ui-dialog {
-            display: none !important; // Overrides inline style
+        .page-header {
+            #switcher-instorepickup .ui-dialog {
+                display: none !important; // Overrides inline style
+            }
+            .promo-banner {
+                text-align: center;
+                padding: 5px;
+                text-transform: uppercase;
+                font-weight: bold;
+                background-color: @theme-color3;
+            }
         }
 
         .minicart-wrapper .action.showcart .counter.qty {
@@ -126,19 +135,21 @@
             }
         }
     }
+
+    .minicart-wrapper .action.showcart:before {
+        font-family: @font-family-name__venia;
+        content: '\e900';
+        font-size: 22px;
+        line-height: 30px;
+        margin-right: 5px;
+    }
 }
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .page-wrapper .page-header {
         margin-bottom: 15px;
         border-bottom: @border-width__base solid @theme-color4;
-        .promo-banner {
-            text-align: center;
-            padding: 5px;
-            text-transform: uppercase;
-            font-weight: bold;
-            background-color: @theme-color3;
-        }
+
         .panel.wrapper {
             border-bottom: none;
             background: none;
