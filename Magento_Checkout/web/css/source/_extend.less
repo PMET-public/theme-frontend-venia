@@ -1,0 +1,35 @@
+/**
+ * @category    ClassyLlama
+ * @copyright   Copyright (c) 2017 Classy Llama
+ */
+& when (@media-common = true) {
+    .cart #shopping-cart-table .instorepickup-delivery-method {
+        .instore:before {
+            margin-right: 4px;
+            margin-left: -4px;
+            font-family: @icons__font-name;
+            font-size: 24px;
+            line-height: 20px;
+            vertical-align: middle;
+        }
+
+        .home:before {
+            .truck-icon();
+        }
+    }
+
+    .checkout-container .modal-content .opc-block-summary .title strong {
+        &.instore:before {
+            margin-right: 4px;
+            margin-left: -4px;
+            font-family: @icons__font-name;
+            font-size: 28px;
+            line-height: 20px;
+            vertical-align: middle;
+        }
+
+        &.home:before {
+            .truck-icon();
+        }
+    }
+}
