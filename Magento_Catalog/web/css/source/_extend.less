@@ -7,6 +7,9 @@
 //  Product Details
 //  _____________________________________________
 & when (@media-common = true) {
+    .swatch-option-tooltip {
+        display: none !important; // override inline style applied with js
+    }
     .catalog-product-view {
         .product-info-main {
             .product-reviews-summary {
@@ -18,6 +21,7 @@
                     .lib-vendor-prefix-display();
                     align-items: center;
                     .swatch-attribute-label {
+                        text-transform: uppercase;
                         width: 80px;
                     }
                     .swatch-attribute-selected-option {
@@ -36,6 +40,9 @@
                         .lib-vendor-prefix-display();
                         align-items: center;
                         margin-bottom: 20px;
+                        input {
+                            height: 35px;
+                        }
                         label {
                             width: 80px;
                         }
@@ -49,10 +56,8 @@
                 }
             }
             .instorepickup-pdp-wrapper {
-                margin-bottom: 0;
                 border-top: @border-width__base solid @border-color__base;
-                padding: 20px 0 10px;
-
+                padding-top: 15px;
                 > p {
                     display: inline-block;
                     margin-right: 20px;
@@ -104,10 +109,17 @@
                 border-bottom: none;
                 margin: 0;
                 .price-box {
-                    display: block;
+                    display: flex;
+                    align-items: center;
                     padding-left: 0;
+                    .old-price {
+                        color: @color-gray-middle2;
+                    }
                     .price-wrapper .price {
                         font-weight: normal;
+                    }
+                    .price-label {
+                        display: none;
                     }
                 }
                 .product-info-stock-sku {
@@ -188,6 +200,10 @@
                     display: block;
                     margin-bottom: 15px;
                 }
+            }
+            .label,
+            .product.attribute.description strong {
+                text-transform: uppercase;
             }
         }
         #product-addtocart-button {
@@ -278,6 +294,9 @@
                 li.product {
                     width: 100%;
                     text-align: center;
+                    &:first-child {
+                        padding: 0;
+                    }
                 }
             }
 
@@ -285,37 +304,38 @@
                 display: none;
             }
         }
-
-        .product-info-main .product-info-price .price-box {
-            display: flex;
-            align-items: center;
-            .old-price {
-                color: @color-gray-middle2;
-            }
-            .price {
-                margin-right: 20px;
-            }
-            .price-label {
-                display: none;
-            }
-        }
-
     }
 
     body.category-shop-the-look .columns .column.main {
         width: 100%;
     }
-    body .swatch-attribute.size .swatch-option {
-        background: transparent;
-        min-width: auto;
-        box-sizing: border-box;
-        padding-bottom: 22px;
-        border-style: solid;
-        border-color: transparent;
-        border-width: 0 0 2px;
-        &:hover {
-            outline: none;
-            border-color: #999;
+    body .swatch-attribute {
+        &.size .swatch-option {
+            background: transparent;
+            min-width: auto;
+            box-sizing: border-box;
+            padding-bottom: 22px;
+            border-style: solid;
+            border-color: transparent;
+            border-width: 0 0 2px;
+            margin: 0 4px;
+            &:hover {
+                outline: none;
+                border-color: #999;
+            }
+        }
+        &.color .swatch-option{
+            min-width: auto;
+            width: 19px;
+            height: 19px;
+            margin: 5px 10px 5px 0;
+            box-sizing: border-box;
+            &:not(.disabled):hover {
+                outline: 2px solid @theme-color1;
+            }
+        }
+        .swatch-option.selected {
+            outline: 2px solid @theme-color1
         }
     }
 
@@ -583,13 +603,7 @@
 
         // Product grid
 
-        .swatch-option.color {
-            min-width: auto;
-            width: 19px;
-            height: 19px;
-            margin: 5px 10px 5px 0;
-            box-sizing: border-box;
-        }
+
 
         .product-item .tocart {
             display: none;

@@ -21,12 +21,12 @@
                 <height>165</height>
             </image>
             <image id="category_page_grid" type="small_image">
-                <width>300</width>
-                <height>375</height>
+                <width>320</width>
+                <height>400</height>
             </image>
             <image id="category_page_grid-1" type="small_image">
-                <width>300</width>
-                <height>375</height>
+                <width>320</width>
+                <height>400</height>
             </image>
             <image id="category_page_list" type="small_image">
                 <width>240</width>
