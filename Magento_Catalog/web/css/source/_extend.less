@@ -94,6 +94,7 @@
                     }
                     .price-wrapper .price {
                         font-weight: normal;
+                        margin: 0 5px;
                     }
                     .price-label {
                         display: none;
@@ -106,6 +107,30 @@
                     .stock,
                     .product {
                         display: inline-block;
+                    }
+                }
+            }
+            .product-add-form {
+                .box-tocart {
+                    display: block;
+                    width: 100%;
+                    margin: 15px 0;
+                    .field.qty {
+                        .lib-vendor-prefix-display();
+                        align-items: center;
+                        margin-bottom: 20px;
+                        input {
+                            height: 35px;
+                        }
+                        label {
+                            width: 80px;
+                        }
+                    }
+                    .actions {
+                        display: block;
+                        border-top: @border-width__base solid @border-color__base;
+                        text-align: left;
+                        padding-top: 20px;
                     }
                 }
             }
@@ -193,25 +218,7 @@
         .product-options-bottom {
             float: none !important;
             .box-tocart {
-                width: 100%;
-                margin: 15px 0;
-                .field.qty {
-                    .lib-vendor-prefix-display();
-                    align-items: center;
-                    margin-bottom: 20px;
-                    input {
-                        height: 35px;
-                    }
-                    label {
-                        width: 80px;
-                    }
-                }
-                .actions {
-                    display: block;
-                    border-top: @border-width__base solid @border-color__base;
-                    text-align: left;
-                    padding-top: 20px;
-                }
+                display: block;
             }
         }
         #product-addtocart-button {
@@ -561,7 +568,6 @@
         }
 
         // Compare / Wishlist
-
         .block-compare,
         .block-wishlist {
             margin-bottom: 25px;
@@ -622,10 +628,6 @@
             }
         }
 
-        // Product grid
-
-
-
         .product-item .tocart {
             display: none;
         }
@@ -668,9 +670,6 @@
         .product-reviews-summary {
             display: none;
         }
-
-
-
 
         .product-item-name {
             flex-grow: 1;
