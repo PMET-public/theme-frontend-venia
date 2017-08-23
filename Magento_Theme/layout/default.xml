@@ -60,7 +60,7 @@
         <!--
             Footer
         -->
-        <move element="store_switcher" destination="header.links" after="customer"/>
+        <move element="store_logoswitcher" destination="header.links" after="customer"/>
         <move element="store_language" destination="header.links" before="customer"/>
         <referenceBlock name="rss-link" remove="true"/>
         <referenceBlock name="sales-guest-form-link" remove="true"/>
