@@ -13,7 +13,12 @@
         <move element="product.info.description" destination="product.info.main" after="product.info.review"/>
         <move element="reviews.tab" destination="reviews.container"/>
         <referenceContainer name="content">
-            <container name="reviews.container" htmlClass="reviews-container" htmlTag="div" after="product.info.details"></container>
+            <container name="reviews.container" htmlClass="reviews-container" htmlTag="div" after="product.info.details">
+                <block class="Magento\Review\Block\Form" name="product.review.form" as="review_form" before="reviewlist">
+                    <container name="product.review.form.fields.before" as="form_fields_before" label="Review Form Fields Before"/>
+                </block>
+                <block class="Magento\Review\Block\Product\View\ListView" name="reviewlist" as="reviewlist" template="Magento_Review::product/view/list.phtml" after="product.review.form"/>
+            </container>
         </referenceContainer>
         <referenceBlock name="product.info.description">
             <arguments>
