@@ -3,7 +3,9 @@
  * @category    ClassyLlama
  * @copyright   Copyright (c) 2017 Classy Llama
  */
+/** @var Magento\Review\Block\Product\View\ListView $block */
 ?>
+
 <?php
 $_items = $block->getReviewsCollection()->getItems();
 $format = $block->getDateFormat() ?: \IntlDateFormatter::MEDIUM;
