@@ -3,8 +3,8 @@
 	"type": "magento2-theme",
 	"require": {
 		"php": "7.0.2|7.0.4|~7.0.6|~7.1.0|~7.2.0",
-		"magento/theme-frontend-blank": "100.2.*",
-		"magento/theme-frontend-luma": "100.2.*",
+		"magento/theme-frontend-blank": "100.3.*",
+		"magento/theme-frontend-luma": "100.3.*",
 		"magento/framework": "*"
 	},
 	"version": "0.1.0",
