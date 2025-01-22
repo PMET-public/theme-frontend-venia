@@ -14,7 +14,11 @@
         <move element="reviews.tab" destination="reviews.container"/>
         <referenceContainer name="content">
             <container name="reviews.container" htmlClass="reviews-container" htmlTag="div" after="product.info.details">
-                <block class="Magento\Review\Block\Form" name="product.review.form" as="review_form" before="reviewlist">
+                <block class="Magento\Review\Block\Form" name="product.review.form" as="review_form" ifconfig="catalog/review/active" before="reviewlist">
+                    <arguments>
+                        <argument name="button_lock_manager" xsi:type="object">Magento\Framework\View\Element\ButtonLockManager</argument>
+                    </arguments>
+                    <container name="form.additional.review.info" as="form_additional_review_info"/>
                     <container name="product.review.form.fields.before" as="form_fields_before" label="Review Form Fields Before"/>
                 </block>
                 <block class="Magento\Review\Block\Product\View\ListView" name="reviewlist" as="reviewlist" template="Magento_Review::product/view/list.phtml" after="product.review.form"/>
